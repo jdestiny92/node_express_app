@@ -1,0 +1,167 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <style>
+  	body{background-image: url(http://nerdtrek.com/wp-content/uploads/2013/11/pathfinder-iconics.jpg);}
+
+  	.container{
+	background-color: lightblue;
+	position:relative;
+	width:70%;
+	
+	margin-top: 8%;
+	margin-left: 15.5%;
+	opacity: .9;
+	}
+
+	#start {
+	position: absolute;
+	width:30%;
+	height: 15%;
+	font-size: 30px;
+	margin-left: 33%;
+	margin-top: 10%;
+	}
+
+	button:hover{
+	border:5px solid blue;
+	background-color: #ff9999;
+	}
+
+	#content{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	}
+
+	h1 {color:black;
+	text-align: center;
+	font-weight: bold;
+	}
+
+	.block {
+		display: block;
+	}
+
+	p {
+		color: green;
+	}
+  </style>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+  		<div id="content">
+  			<form>
+  			<p>1. As you’re walking alone through a deserted woodland, you come across an injured sprite, a rare magical creature whom calls out to you for help. You:</p>
+  			<label class="block" id=4><input type="radio">Instantly tend its its wound and heal its injuries</label>
+			<label class="block" id=2><input type="radio">Start to think how much you could make from selling it</label>
+			<label class="block" id=5><input type="radio">Get mesmerized in trying to ascertain the source of its magic</label>
+			<label class="block" id=1><input type="radio">Quickly get annoyed of its prescence and decide to kill it</label>
+			<label class="block" id=3><input type="radio">Ask if you could help bring it back to its home</label>
+
+			<p>2. You are currently at a tavern, you are:</p>
+  			<label class="block" id=1><input type="radio">The person sitting by himself</label>
+			<label class="block" id=2><input type="radio">Competing with others in a friendly game of darts</label>
+			<label class="block" id=3><input type="radio">Laughing and buying your friends all drinks</label>
+			<label class="block" id=4><input type="radio">Looking after your friends who are already drunk</label>
+			<label class="block" id=5><input type="radio">Trying to learn some cool drink recipes from the bartender</label>
+
+			<p>3. The tavern is suddenly attacked by a band of thieves, you:</p>
+  			<label class="block" id=4><input type="radio">Try to convince them to stop before its too late</label>
+			<label class="block" id=5><input type="radio">Start to anticipate every possible scenario that will lead you to defeat them</label>
+			<label class="block" id=1><input type="radio">Decapitate the nearest thief to you to get your message across</label>
+			<label class="block" id=2><input type="radio">Easily avoid their attacks while making your escape</label>
+			<label class="block" id=3><input type="radio">Fight them all simultaneously in order to reduce the casualties</label>
+
+			<p>4. In order to accomplish the quest given to you, you would:</p>
+  			<label class="block" id=3><input type="radio">Follow the directions given to you meticulously</label>
+			<label class="block" id=1><input type="radio">Do whatever it would take to finish it through</label>
+			<label class="block" id=5><input type="radio">Research ahead of time in order to find the quickest route</label>
+			<label class="block" id=4><input type="radio">Enlist the aid of allies made along the way</label>
+			<label class="block" id=2><input type="radio">Figure out ways you could make use of your bartering skills</label>
+
+			<p>5. Finally finding your long sought after treasure, you see it is guarded by a dragon, you:</p>
+  			<label class="block" id=2><input type="radio">Try to blind it by aiming for its eyes, then steal the treasure</label>
+			<label class="block" id=3><input type="radio">Plan to endure the dragon’s attacks, until you find an opening to strike</label>
+			<label class="block" id=1><input type="radio">Charge straight at it without a second thought</label>
+			<label class="block" id=5><input type="radio">Think of a plan to get the treasure without the dragon ever realizing it</label>
+			<label class="block" id=4><input type="radio">Attempt to negotiate with the dragon, if it is intelligent enough</label>
+
+			<p>6. As a leader in a large scale battle, your main plan of action is to:</p>
+  			<label class="block" id=1><input type="radio">Overwhelm the enemy with brute force</label>
+			<label class="block" id=2><input type="radio">Thin out their flanks with ranged attacks until they are weak enough to strike down</label>
+			<label class="block" id=3><input type="radio">Keeping them distracted on a front, while flanking them with hit and run tactics</label>
+			<label class="block" id=4><input type="radio">Attacking on all sides equally, making sure your front has a supporting backline</label>
+			<label class="block" id=5><input type="radio">Keep sustained damage on the enemy to wear them down and keep losses to a minimum</label>
+
+			<p>7. In what way would your friends describe you as a person?</p>
+  			<label class="block" id=5><input type="radio">Intelligent</label>
+			<label class="block" id=4><input type="radio">Caring</label>
+			<label class="block" id=3><input type="radio">Supportive</label>
+			<label class="block" id=2><input type="radio">Athletic</label>
+			<label class="block" id=1><input type="radio">Cold</label>
+
+
+  			</form>
+  		</div>
+	
+	</div>
+
+  <script>
+  	var score = 0;
+  	var tally = 0;
+
+  	$('.block').on('click', function(){
+  		//$(this).attr('color', 'red');
+
+  		tally++;
+  		var amount = this.id;
+  		amount = parseInt(amount);
+  		score = parseInt(score);
+  		score += amount;
+  		console.log(score);
+
+  		if(tally == 7){
+  			if(score > 35){
+  				alert('Sorry, you clicked an answer choice twice! Please refresh and select again!');
+  			}
+  			if(score == 7){
+  				location.replace('darkknight.html');
+  			}
+  			if(score > 7 && score < 14){
+  				location.replace('ranger.html');
+  			}
+  			if(score == 14){
+  				location.replace('archer.html');
+  			}
+  			if(score > 14 && score < 21){
+  				location.replace('samurai.html');
+  			}
+  			if(score == 21){
+  				location.replace('paladin.html');
+  			}
+  			if(score > 21 && score < 28){
+  				location.replace('summoner.html');
+  			}
+  			if(score == 28){
+  				location.replace('cleric.html');
+  			}
+  			if(score > 28 && score < 35){
+  				location.replace('alchemist.html');
+  			}
+  			if(score == 35){
+  				location.replace('sorcerer.html');
+  			}
+  		}
+  	})
+
+  	
+  </script>
+</body>
+</html>

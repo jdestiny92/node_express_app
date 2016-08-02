@@ -11,10 +11,10 @@
 	background-color: lightblue;
 	position:relative;
 	width:70%;
-	height:500px;
+	
 	margin-top: 8%;
 	margin-left: 15.5%;
-	opacity: .7;
+	
 	}
 
 	#start {
@@ -49,22 +49,17 @@
 <body>
 	<div class="container">
     
-  		<h1>Which RPG (Role Playing Game) Character Are You?<br>
-  			Click the start button to take the survey<br> and find your result!</h1>
+  		<h1>You are a Ranger!</h1>
 
-  		<button id="start">Start!</button>
+  		
   
   		<div id="content">
-  
+  			<img src="https://www.wizards.com/mtg/images/daily/stf/stf58_ranger.jpg" style="width:850px; height:500px;">
+
+  			<p>Rangers are usually associated with the wisdom of nature. Rangers tend to be wise, hardy, cunning, and perceptive in addition to being skilled woodsmen.</p>
   		</div>
 	
 	</div>
 
-  <script>
-  	$('#start').on('click', function(){
-  		//$.get('/survey');
-  		location.replace('survey.html');
-  	})
-  </script>
 </body>
 </html>
