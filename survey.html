@@ -11,7 +11,7 @@
 	background-color: lightblue;
 	position:relative;
 	width:70%;
-	
+
 	margin-top: 8%;
 	margin-left: 15.5%;
 	opacity: .9;
@@ -120,7 +120,7 @@
 
   			</form>
   		</div>
-	
+
 	</div>
 
   <script>
@@ -138,40 +138,47 @@
   		console.log(score);
 
   		if(tally == 7){
-  			if(score > 35){
-  				alert('Sorry, you clicked an answer choice twice! Please refresh and select again!');
-  			}
+  			
   			if(score == 7){
-  				location.replace('results/darkknight.html');
+  				location.href ='http://localhost:3000/darkknight';
+  				//location.replace('results/darkknight.html');
   			}
   			if(score > 7 && score < 14){
-  				location.replace('results/ranger.html');
+  				location.href ='http://localhost:3000/ranger';
+  				//location.replace('results/ranger.html');
   			}
   			if(score == 14){
-  				location.replace('results/archer.html');
+  				location.href ='http://localhost:3000/archer';
+  				//location.replace('results/archer.html');
   			}
   			if(score > 14 && score < 21){
-  				location.replace('results/samurai.html');
+  				location.href ='http://localhost:3000/samurai';
+  				//location.replace('results/samurai.html');
   			}
   			if(score == 21){
-  				location.replace('results/paladin.html');
+  				location.href ='http://localhost:3000/paladin';
+  				//location.replace('results/paladin.html');
   			}
   			if(score > 21 && score < 28){
-  				location.replace('results/summoner.html');
+  				location.href ='http://localhost:3000/summoner';
+  				//location.replace('results/summoner.html');
   			}
   			if(score == 28){
-  				location.replace('results/cleric.html');
+  				location.href ='http://localhost:3000/cleric';
+  				//location.replace('results/cleric.html');
   			}
   			if(score > 28 && score < 35){
-  				location.replace('results/alchemist.html');
+  				location.href ='http://localhost:3000/alchemist';
+  				//location.replace('results/alchemist.html');
   			}
   			if(score == 35){
-  				location.replace('results/sorcerer.html');
+  				location.href ='http://localhost:3000/sorcerer';
+  				//location.replace('results/sorcerer.html');
   			}
   		}
   	})
 
-  	
+
   </script>
 </body>
 </html>
