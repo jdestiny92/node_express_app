@@ -1,16 +1,17 @@
 var express = require('express');
 var app = express();
-//app.use(express.static(__dirname + '/results'));
 var port = process.env.PORT || 3000;
-
+var path = require('path');
+app.use(express.static('public'));
+app.set('view engine', 'html');
 var classes = ['darkknight', 'ranger', 'archer', 'samurai', 'paladin', 'summoner', 'cleric', 'alchemist', 'sorcerer'];
 
 app.get('/', function(req, res) {
-    res.render('index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/survey', function(req, res) {
-	res.render('survey.html');
+	res.sendFile(__dirname + '/public/survey.html');
 });
 
 app.get('/:class', function(req, res) {
@@ -18,7 +19,7 @@ app.get('/:class', function(req, res) {
 
 	for(i=0; i<classes.length; i++){
 		if(chosen == classes[i]){
-			res.render('results/' + classes[i] + '.html');
+			res.sendFile(__dirname + '/public/' + classes[i] + '.html');
 		}
 	}
 });
